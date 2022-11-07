@@ -1,0 +1,65 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# Maintainer: Your Name <youremail@domain.com>
+pkgname="phyOS-plymouth-black-vortex-theme"
+pkgver=1.0
+pkgrel=1
+epoch=
+_destname1="/usr"
+pkgdesc="PhyOS Black Vortex Plymouth Theme"
+arch=('any')
+url="https://github.com/borapocan/phyOS-plymouth-black-vortex-theme"
+license=('')
+groups=()
+#depends=('plymouth')
+makedepends=('git')
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+options=(!strip !emptydirs)
+changelog=
+#pkgdir='/usr'
+#source=("$pkgname-$pkgver.tar.gz"
+#        "$pkgname-$pkgver.patch")
+source=(${pkgname}::git+$url)
+noextract=()
+md5sums=('SKIP')
+validpgpkeys=()
+
+#prepare() {
+#	cd "$pkgname-$pkgver"
+#	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+#}
+#
+#build() {
+#	cd "$pkgname-$pkgver"
+#	./configure --prefix=/usr
+#	make
+#}
+#
+#check() {
+#	cd "$pkgname-$pkgver"
+#	make -k check
+#}
+#
+#package() {
+#	cd "$pkgname-$pkgver"
+#	make DESTDIR="$pkgdir/" install
+#}
+package() {
+  #install -dm755 ${pkgdir}${_licensedir}${pkgname}
+  install -dm755 ${pkgdir}${pkgname}
+  #install -m644  ${srcdir}/${pkgname}/LICENSE ${pkgdir}${_licensedir}${pkgname}
+  install -m644  ${srcdir}/${pkgname} ${pkgdir}${pkgname}
+
+  cp -r ${_destname1} ${pkgdir}
+  #cp -r ${srcdir}/${pkgname}/${_destname1} ${pkgdir}
+}

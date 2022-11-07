@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=Black Vortex Plymouth Theme
+Description=phyOS logo with spinning colored stripes
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/phyOS-plymouth-black-vortex-theme
+ScriptFile=/usr/share/plymouth/themes/phyOS-plymouth-black-vortex-theme/phyOS-plymouth-black-vortex-theme.script
+UseFirmwareBackGround=false
